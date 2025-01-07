@@ -17,7 +17,7 @@ from random import Random
 from typing import Any, Callable, Optional
 
 import anyio
-from chia_puzzles_py.programs import CHIALISP_DESERIALISATION, ROM_BOOTSRAP_GENERATOR
+from chia_puzzles_py.programs import CHIALISP_DESERIALISATION, ROM_BOOTSTRAP_GENERATOR
 from chia_rs import ALLOW_BACKREFS, MEMPOOL_MODE, AugSchemeMPL, G1Element, G2Element, PrivateKey, solution_generator
 
 from chia.consensus.block_creation import create_unfinished_block, unfinished_block_to_full_block
@@ -117,7 +117,7 @@ from chia.wallet.derive_keys import (
 
 DESERIALIZE_MOD = Program.from_bytes(CHIALISP_DESERIALISATION)
 
-GENERATOR_MOD: SerializedProgram = SerializedProgram.from_bytes(ROM_BOOTSRAP_GENERATOR)
+GENERATOR_MOD: SerializedProgram = SerializedProgram.from_bytes(ROM_BOOTSTRAP_GENERATOR)
 
 test_constants = DEFAULT_CONSTANTS.replace(
     MIN_PLOT_SIZE=uint8(18),
